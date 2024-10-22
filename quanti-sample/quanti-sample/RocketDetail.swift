@@ -44,6 +44,12 @@ struct RocketDetailView: View {
             }
             .withAddedTitle("Parameters")
             
+            RocketStageView(stage: store.rocket.firstStage)
+                .withAddedTitle("First Stage")
+            
+            RocketStageView(stage: store.rocket.secondStage)
+                .withAddedTitle("Second Stage")
+            
             ForEach (store.rocket.flickrImages, id: \.self) { imageUrl in
                 AsyncImage(url: URL(string: imageUrl)) { image in
                     image
@@ -74,6 +80,32 @@ struct ParameterView: View {
         }
         .foregroundStyle(Color.white)
         .withRoundedBackground(color: .accentColor)
+    }
+}
+
+struct RocketStageView: View {
+    let stage: RocketStageDisplayable
+    var body: some View {
+        VStack(spacing: AppConstants.spacing/2) {
+            RocketStageLineView(icon: "Reusable", text: stage.formattedReusability)
+            RocketStageLineView(icon: "Engine", text: stage.formattedEngines)
+            RocketStageLineView(icon: "Fuel", text: stage.formattedFuelAmount)
+            RocketStageLineView(icon: "Burn", text: stage.formattedBurnTime)
+        }
+        .withRoundedBackground(color: .secondary.opacity(0.2))
+    }
+}
+
+struct RocketStageLineView: View {
+    let icon: String
+    let text: String
+    
+    var body: some View {
+        HStack(spacing: AppConstants.spacing) {
+            Image(icon)
+            Text(text)
+                .frame(maxWidth: .infinity, alignment: .leading)
+        }
     }
 }
 

@@ -36,7 +36,7 @@ struct Rocket: Codable {
         
         var formattedMeters: String {
             guard let meters = meters else { return "?" }
-            return String(format: "%.0f", meters) + "m"
+            return String(format: "%.0f", meters.rounded()) + "m"
         }
     }
 
@@ -46,7 +46,7 @@ struct Rocket: Codable {
         
         var formattedTons: String {
             guard let kg = kg else { return "?" }
-            return String(format: "%.0f", kg*0.001) + "t"
+            return String(format: "%.0f", (kg*0.001).rounded()) + "t"
         }
     }
 
@@ -197,3 +197,37 @@ extension Rocket: Identifiable {
 
 // MARK: convenience
 
+protocol RocketStageDisplayable {
+    var reusable: Bool { get }
+    var engines: Int { get }
+    var fuelAmountTons: Double? { get }
+    var burnTimeSec: Double? { get }
+}
+
+extension Rocket.FirstStage: RocketStageDisplayable {
+    
+}
+
+extension Rocket.SecondStage: RocketStageDisplayable {
+    
+}
+
+extension RocketStageDisplayable {
+    var formattedReusability: String {
+        return reusable ? "Reusable" : "Not reusable"
+    }
+    
+    var formattedEngines: String {
+        return "\(engines) engines"
+    }
+    
+    var formattedFuelAmount: String {
+        guard let fuelAmountTons = fuelAmountTons else { return "Unknown fuel" }
+        return String(format: "%.0f", fuelAmountTons.rounded()) + " tons of fuel"
+    }
+    
+    var formattedBurnTime: String {
+        guard let burnTimeSec = burnTimeSec else { return "Unknown burn time" }
+        return String(format: "%.0f", burnTimeSec.rounded()) + " seconds burn time"
+    }
+}
