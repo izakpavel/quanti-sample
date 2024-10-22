@@ -1,0 +1,601 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1BD5D10D2CC7997100B588F1 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 1BD5D10C2CC7997100B588F1 /* ComposableArchitecture */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1BD5D0EF2CC796AC00B588F1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1BD5D0D62CC796AB00B588F1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1BD5D0DD2CC796AB00B588F1;
+			remoteInfo = "quanti-sample";
+		};
+		1BD5D0F92CC796AC00B588F1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1BD5D0D62CC796AB00B588F1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1BD5D0DD2CC796AB00B588F1;
+			remoteInfo = "quanti-sample";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1BD5D0DE2CC796AB00B588F1 /* quanti-sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "quanti-sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1BD5D0EE2CC796AC00B588F1 /* quanti-sampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "quanti-sampleTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1BD5D0F82CC796AC00B588F1 /* quanti-sampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "quanti-sampleUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		1BD5D0E02CC796AB00B588F1 /* quanti-sample */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "quanti-sample";
+			sourceTree = "<group>";
+		};
+		1BD5D0F12CC796AC00B588F1 /* quanti-sampleTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "quanti-sampleTests";
+			sourceTree = "<group>";
+		};
+		1BD5D0FB2CC796AC00B588F1 /* quanti-sampleUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "quanti-sampleUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1BD5D0DB2CC796AB00B588F1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1BD5D10D2CC7997100B588F1 /* ComposableArchitecture in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1BD5D0EB2CC796AC00B588F1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1BD5D0F52CC796AC00B588F1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1BD5D0D52CC796AB00B588F1 = {
+			isa = PBXGroup;
+			children = (
+				1BD5D0E02CC796AB00B588F1 /* quanti-sample */,
+				1BD5D0F12CC796AC00B588F1 /* quanti-sampleTests */,
+				1BD5D0FB2CC796AC00B588F1 /* quanti-sampleUITests */,
+				1BD5D0DF2CC796AB00B588F1 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1BD5D0DF2CC796AB00B588F1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1BD5D0DE2CC796AB00B588F1 /* quanti-sample.app */,
+				1BD5D0EE2CC796AC00B588F1 /* quanti-sampleTests.xctest */,
+				1BD5D0F82CC796AC00B588F1 /* quanti-sampleUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1BD5D0DD2CC796AB00B588F1 /* quanti-sample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1BD5D1022CC796AC00B588F1 /* Build configuration list for PBXNativeTarget "quanti-sample" */;
+			buildPhases = (
+				1BD5D0DA2CC796AB00B588F1 /* Sources */,
+				1BD5D0DB2CC796AB00B588F1 /* Frameworks */,
+				1BD5D0DC2CC796AB00B588F1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				1BD5D0E02CC796AB00B588F1 /* quanti-sample */,
+			);
+			name = "quanti-sample";
+			packageProductDependencies = (
+				1BD5D10C2CC7997100B588F1 /* ComposableArchitecture */,
+			);
+			productName = "quanti-sample";
+			productReference = 1BD5D0DE2CC796AB00B588F1 /* quanti-sample.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1BD5D0ED2CC796AC00B588F1 /* quanti-sampleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1BD5D1052CC796AC00B588F1 /* Build configuration list for PBXNativeTarget "quanti-sampleTests" */;
+			buildPhases = (
+				1BD5D0EA2CC796AC00B588F1 /* Sources */,
+				1BD5D0EB2CC796AC00B588F1 /* Frameworks */,
+				1BD5D0EC2CC796AC00B588F1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1BD5D0F02CC796AC00B588F1 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				1BD5D0F12CC796AC00B588F1 /* quanti-sampleTests */,
+			);
+			name = "quanti-sampleTests";
+			packageProductDependencies = (
+			);
+			productName = "quanti-sampleTests";
+			productReference = 1BD5D0EE2CC796AC00B588F1 /* quanti-sampleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		1BD5D0F72CC796AC00B588F1 /* quanti-sampleUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1BD5D1082CC796AC00B588F1 /* Build configuration list for PBXNativeTarget "quanti-sampleUITests" */;
+			buildPhases = (
+				1BD5D0F42CC796AC00B588F1 /* Sources */,
+				1BD5D0F52CC796AC00B588F1 /* Frameworks */,
+				1BD5D0F62CC796AC00B588F1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1BD5D0FA2CC796AC00B588F1 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				1BD5D0FB2CC796AC00B588F1 /* quanti-sampleUITests */,
+			);
+			name = "quanti-sampleUITests";
+			packageProductDependencies = (
+			);
+			productName = "quanti-sampleUITests";
+			productReference = 1BD5D0F82CC796AC00B588F1 /* quanti-sampleUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1BD5D0D62CC796AB00B588F1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					1BD5D0DD2CC796AB00B588F1 = {
+						CreatedOnToolsVersion = 16.0;
+					};
+					1BD5D0ED2CC796AC00B588F1 = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = 1BD5D0DD2CC796AB00B588F1;
+					};
+					1BD5D0F72CC796AC00B588F1 = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = 1BD5D0DD2CC796AB00B588F1;
+					};
+				};
+			};
+			buildConfigurationList = 1BD5D0D92CC796AB00B588F1 /* Build configuration list for PBXProject "quanti-sample" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1BD5D0D52CC796AB00B588F1;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				1BD5D10B2CC7997100B588F1 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 1BD5D0DF2CC796AB00B588F1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1BD5D0DD2CC796AB00B588F1 /* quanti-sample */,
+				1BD5D0ED2CC796AC00B588F1 /* quanti-sampleTests */,
+				1BD5D0F72CC796AC00B588F1 /* quanti-sampleUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1BD5D0DC2CC796AB00B588F1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1BD5D0EC2CC796AC00B588F1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1BD5D0F62CC796AC00B588F1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1BD5D0DA2CC796AB00B588F1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1BD5D0EA2CC796AC00B588F1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1BD5D0F42CC796AC00B588F1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1BD5D0F02CC796AC00B588F1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1BD5D0DD2CC796AB00B588F1 /* quanti-sample */;
+			targetProxy = 1BD5D0EF2CC796AC00B588F1 /* PBXContainerItemProxy */;
+		};
+		1BD5D0FA2CC796AC00B588F1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1BD5D0DD2CC796AB00B588F1 /* quanti-sample */;
+			targetProxy = 1BD5D0F92CC796AC00B588F1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1BD5D1002CC796AC00B588F1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		1BD5D1012CC796AC00B588F1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1BD5D1032CC796AC00B588F1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"quanti-sample/Preview Content\"";
+				DEVELOPMENT_TEAM = 429H9B36BJ;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "tech.nerdyak.quanti-sample";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		1BD5D1042CC796AC00B588F1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"quanti-sample/Preview Content\"";
+				DEVELOPMENT_TEAM = 429H9B36BJ;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "tech.nerdyak.quanti-sample";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		1BD5D1062CC796AC00B588F1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 429H9B36BJ;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "tech.nerdyak.quanti-sampleTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/quanti-sample.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/quanti-sample";
+			};
+			name = Debug;
+		};
+		1BD5D1072CC796AC00B588F1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 429H9B36BJ;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "tech.nerdyak.quanti-sampleTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/quanti-sample.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/quanti-sample";
+			};
+			name = Release;
+		};
+		1BD5D1092CC796AC00B588F1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 429H9B36BJ;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "tech.nerdyak.quanti-sampleUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "quanti-sample";
+			};
+			name = Debug;
+		};
+		1BD5D10A2CC796AC00B588F1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 429H9B36BJ;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "tech.nerdyak.quanti-sampleUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "quanti-sample";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1BD5D0D92CC796AB00B588F1 /* Build configuration list for PBXProject "quanti-sample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1BD5D1002CC796AC00B588F1 /* Debug */,
+				1BD5D1012CC796AC00B588F1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1BD5D1022CC796AC00B588F1 /* Build configuration list for PBXNativeTarget "quanti-sample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1BD5D1032CC796AC00B588F1 /* Debug */,
+				1BD5D1042CC796AC00B588F1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1BD5D1052CC796AC00B588F1 /* Build configuration list for PBXNativeTarget "quanti-sampleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1BD5D1062CC796AC00B588F1 /* Debug */,
+				1BD5D1072CC796AC00B588F1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1BD5D1082CC796AC00B588F1 /* Build configuration list for PBXNativeTarget "quanti-sampleUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1BD5D1092CC796AC00B588F1 /* Debug */,
+				1BD5D10A2CC796AC00B588F1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1BD5D10B2CC7997100B588F1 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.15.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1BD5D10C2CC7997100B588F1 /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1BD5D10B2CC7997100B588F1 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 1BD5D0D62CC796AB00B588F1 /* Project object */;
+}
