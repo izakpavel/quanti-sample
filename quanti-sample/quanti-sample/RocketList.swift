@@ -38,17 +38,26 @@ extension DependencyValues {
 
 @Reducer
 struct RocketList {
+    @Reducer(state: .equatable)
+    enum Destination {
+        case rocketDetail(RocketDetail)
+        case rocketLaunch(RocketLaunch)
+    }
+    
     @ObservableState
     struct State {
         var rockets: [Rocket]
         var isLoading = false
         var error: Error?
+        var path = StackState<Destination.State>()
     }
   
     enum Action {
         case load
         case loadResponse([Rocket], Error?)
         case openDetail(rocket: Rocket)
+        case openLaunch
+        case path(StackAction<Destination.State, Destination.Action>)
     }
     
     @Dependency(\.rocketsProvider) var rocketsProvider
@@ -76,33 +85,66 @@ struct RocketList {
                 return .none
             
             case .openDetail(let rocket):
+                state.path.append(.rocketDetail(RocketDetail.State(rocket: rocket)))
                 return .none
-      }
+            
+            case .openLaunch:
+                state.path.append(.rocketLaunch(RocketLaunch.State()))
+                return .none
+                
+            case .path(_):
+                return .none
+            }
+        }.forEach(\.path, action: \.path) 
     }
-  }
 }
 
 // MARK: - RocketListView
 
 struct RocketListView: View {
-  let store: StoreOf<RocketList>
+    @Bindable var store: StoreOf<RocketList>
   
     var body: some View {
-        List {
-            ForEach (store.rockets) { rocket in
-                RocketListItemView(rocket: rocket)
+        NavigationStack(path: $store.scope(state: \.path, action: \.path)) {
+            List {
+                ForEach (store.rockets) { rocket in
+                    //NavigationLink(state: RocketList.Destination.rocketDetail(RocketDetail())) {//RocketDetail.State(rocket: rocket)) {
+                        RocketListItemView(rocket: rocket)
+                        .onTapGesture {
+                            store.send(.openDetail(rocket: rocket))
+                        }
+                    //}
+                }
             }
-        }
-        .overlay {
-            if store.isLoading {
-                ProgressView().progressViewStyle(CircularProgressViewStyle())
+            .overlay {
+                if store.isLoading {
+                    ProgressView().progressViewStyle(CircularProgressViewStyle())
+                }
+                else if let error = store.error {
+                    Text(error.localizedDescription)
+                }
             }
-            else if let error = store.error {
-                Text(error.localizedDescription)
+            .onAppear{
+                store.send(.load)
             }
-        }
-        .onAppear{
-            store.send(.load)
+            .navigationTitle("Rockets")
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button(action: {
+                        store.send(.openLaunch)
+                    }) {
+                        Text("Launch")
+                    }
+                }
+            }
+                            
+        } destination: { state in
+            switch state.case {
+            case .rocketDetail(let store):
+                RocketDetailView(store: store)
+            case .rocketLaunch(let store):
+                RocketLaunchView(store: store)
+            }
         }
     }
 }
