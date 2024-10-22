@@ -8,6 +8,34 @@ import ComposableArchitecture
 import Foundation
 import SwiftUI
 
+// MARK: - RocketsProvider
+
+struct RocketsProvider {
+    var fetch: () async throws -> ([Rocket])
+}
+
+extension RocketsProvider: DependencyKey {
+    
+    static let liveValue = Self(
+        fetch: {
+            let (data, _) = try await URLSession.shared
+            .data(from: URL(string: "https://api.spacexdata.com/v3/rockets")!)
+            let rockets = try JSONDecoder().decode([Rocket].self, from: data)
+            return rockets
+        }
+    )
+}
+
+
+extension DependencyValues {
+  var rocketsProvider: RocketsProvider {
+    get { self[RocketsProvider.self] }
+    set { self[RocketsProvider.self] = newValue }
+  }
+}
+
+// MARK: - RocketList
+
 @Reducer
 struct RocketList {
     @ObservableState
@@ -22,6 +50,8 @@ struct RocketList {
         case loadResponse([Rocket], Error?)
         case openDetail(rocket: Rocket)
     }
+    
+    @Dependency(\.rocketsProvider) var rocketsProvider
   
     var body: some ReducerOf<Self> {
         Reduce { state, action in
@@ -31,9 +61,7 @@ struct RocketList {
                 state.isLoading = true
                 return .run { send in
                     do {
-                        let (data, _) = try await URLSession.shared
-                            .data(from: URL(string: "https://api.spacexdata.com/v3/rockets")!)
-                        let rockets = try JSONDecoder().decode([Rocket].self, from: data)
+                        let rockets = try await rocketsProvider.fetch()
                         await send(.loadResponse(rockets, nil))
                     }
                     catch {
@@ -53,6 +81,8 @@ struct RocketList {
     }
   }
 }
+
+// MARK: - RocketListView
 
 struct RocketListView: View {
   let store: StoreOf<RocketList>
