@@ -33,11 +33,21 @@ struct Rocket: Codable {
     struct Dimensions: Codable {
         let meters: Double?
         let feet: Double?
+        
+        var formattedMeters: String {
+            guard let meters = meters else { return "?" }
+            return String(format: "%.0f", meters) + "m"
+        }
     }
 
     struct Mass: Codable {
-        let kg: Double
-        let lb: Double
+        let kg: Double?
+        let lb: Double?
+        
+        var formattedTons: String {
+            guard let kg = kg else { return "?" }
+            return String(format: "%.0f", kg*0.001) + "t"
+        }
     }
 
     struct PayloadWeight: Codable {
@@ -184,3 +194,6 @@ extension Rocket: Equatable {
 extension Rocket: Identifiable {
     
 }
+
+// MARK: convenience
+

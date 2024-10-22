@@ -153,7 +153,7 @@ struct RocketListView: View {
 struct RocketListItemView: View {
     let rocket: Rocket
     var body: some View {
-        HStack(spacing: 16) {
+        HStack(spacing: AppConstants.spacing) {
             Image("RocketIcon")
             VStack(alignment: .leading) {
                 Text(rocket.rocketName).font(.headline)
