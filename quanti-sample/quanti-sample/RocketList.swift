@@ -158,5 +158,7 @@ struct RocketListItemView: View {
                 Text("First flight: \(rocket.firstFlight)").font(.footnote).foregroundStyle(.secondary)
             }
         }
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .contentShape(Rectangle())
     }
 }

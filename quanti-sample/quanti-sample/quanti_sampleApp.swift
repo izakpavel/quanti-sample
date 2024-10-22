@@ -12,7 +12,8 @@ import ComposableArchitecture
 struct quanti_sampleApp: App {
     static let store = Store(initialState: RocketList.State(rockets: [])) {
         RocketList()
-          ._printChanges()
+          //._printChanges() // DEBUG prints
+        
       }
     
     var body: some Scene {

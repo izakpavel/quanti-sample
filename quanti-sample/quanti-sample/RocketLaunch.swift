@@ -6,17 +6,51 @@
 //
 import ComposableArchitecture
 import SwiftUI
+import CoreMotion
+import Combine
+
+// MARK: Simple motion manager
+
+class MotionManager {
+    private var motionManager = CMMotionManager()
+    
+    let pitchSubject: PassthroughSubject<Double, Never> = .init()
+
+    func startMotionUpdates() {
+        if motionManager.isDeviceMotionAvailable {
+            motionManager.deviceMotionUpdateInterval = 0.1
+            motionManager.startDeviceMotionUpdates(to: .main) { (motion, error) in
+                guard let motion = motion else { return }
+                
+                // Example: Detect device movement based on pitch angle
+                let pitch = motion.attitude.pitch
+                self.pitchSubject.send (pitch)  // Adjust the threshold as needed
+            }
+        }
+    }
+
+    func stopMotionUpdates() {
+        motionManager.stopDeviceMotionUpdates()
+    }
+}
+
+
+// MARK: Reducer
 
 @Reducer
 struct RocketLaunch {
   
+    let motion = MotionManager()
+    
     @ObservableState
     struct State: Equatable {
         var isLaunched = false
         var imageName = "Rocket Idle"
     }
   
-    enum Action {
+    public enum Action {
+        case startMotionUpdates
+        case stopMotionUpdates
         case launch
         case land
     }
@@ -31,10 +65,25 @@ struct RocketLaunch {
                 case .land:
                   state.isLaunched = false
                   return .none
+                
+                case .startMotionUpdates:
+                self.motion.startMotionUpdates()
+                    return .publisher {
+                        motion.pitchSubject
+                            .map { value in
+                                return value < 0.2 ? .land : .launch
+                            }
+                      }
+                
+                case .stopMotionUpdates:
+                self.motion.stopMotionUpdates()
+                return .none
             }
         }
     }
 }
+
+// MARK: VIEWS
 
 struct RocketView: View, Animatable {
     var offset: CGFloat = 0 // 0..1
@@ -62,9 +111,6 @@ struct RocketView: View, Animatable {
 struct RocketLaunchView: View {
     
     @Bindable var store: StoreOf<RocketLaunch>
-    
-    
-    
   
     var body: some View {
         VStack() {
@@ -72,18 +118,16 @@ struct RocketLaunchView: View {
             RocketView(offset: store.isLaunched ? 1 : 0)
                 .animation(.easeIn(duration: 2), value: store.isLaunched)
           
-          
-          Button(action: { store.send(.launch) } ) {
-              Text("launch!")
-          }.padding()
-            
-            Button(action: { store.send(.land) } ) {
-                Text("land!")
-            }.padding()
+            Text(store.isLaunched ? "Launch successful!" : "Move your phone up to launch the rocket")
+                .font(.headline)
+                .padding()
       }// VSTack
       .onAppear {
           // Start motion updates when the view appears
-          //viewStore.send(.startMotionUpdates)
+          store.send(.startMotionUpdates)
+      }
+      .onDisappear{
+          store.send(.stopMotionUpdates)
       }
       .navigationTitle("Launch")
   }

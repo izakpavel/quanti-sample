@@ -75,7 +75,7 @@ struct ParameterView: View {
     let title: String
     var body: some View {
         VStack(spacing: AppConstants.spacing/2) {
-            Text(value).font(.title.weight(.bold))
+            Text(value).font(.title2.weight(.bold))
             Text(title).font(.body.weight(.medium))
         }
         .foregroundStyle(Color.white)
