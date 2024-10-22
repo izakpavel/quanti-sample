@@ -108,12 +108,10 @@ struct RocketListView: View {
         NavigationStack(path: $store.scope(state: \.path, action: \.path)) {
             List {
                 ForEach (store.rockets) { rocket in
-                    //NavigationLink(state: RocketList.Destination.rocketDetail(RocketDetail())) {//RocketDetail.State(rocket: rocket)) {
-                        RocketListItemView(rocket: rocket)
+                    RocketListItemView(rocket: rocket)
                         .onTapGesture {
                             store.send(.openDetail(rocket: rocket))
                         }
-                    //}
                 }
             }
             .overlay {
