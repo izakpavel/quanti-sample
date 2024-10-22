@@ -90,7 +90,7 @@ struct RocketListView: View {
     var body: some View {
         List {
             ForEach (store.rockets) { rocket in
-                Text(rocket.rocketName)
+                RocketListItemView(rocket: rocket)
             }
         }
         .overlay {
@@ -103,6 +103,20 @@ struct RocketListView: View {
         }
         .onAppear{
             store.send(.load)
+        }
+    }
+}
+
+
+struct RocketListItemView: View {
+    let rocket: Rocket
+    var body: some View {
+        HStack(spacing: 16) {
+            Image("RocketIcon")
+            VStack(alignment: .leading) {
+                Text(rocket.rocketName).font(.headline)
+                Text("First flight: \(rocket.firstFlight)").font(.footnote).foregroundStyle(.secondary)
+            }
         }
     }
 }
