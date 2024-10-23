@@ -218,7 +218,7 @@ extension RocketStageDisplayable {
     }
     
     var formattedEngines: String {
-        return "\(engines) engines"
+        return "\(engines) engine(s)"
     }
     
     var formattedFuelAmount: String {
