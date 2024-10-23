@@ -86,7 +86,7 @@ struct ParameterView: View {
 struct RocketStageView: View {
     let stage: RocketStageDisplayable
     var body: some View {
-        VStack(spacing: AppConstants.spacing/2) {
+        VStack(spacing: AppConstants.spacing) {
             RocketStageLineView(icon: "Reusable", text: stage.formattedReusability)
             RocketStageLineView(icon: "Engine", text: stage.formattedEngines)
             RocketStageLineView(icon: "Fuel", text: stage.formattedFuelAmount)

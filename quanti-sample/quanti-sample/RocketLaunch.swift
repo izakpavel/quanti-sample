@@ -15,16 +15,20 @@ class MotionManager {
     private var motionManager = CMMotionManager()
     
     let pitchSubject: PassthroughSubject<Double, Never> = .init()
+    
+    static let shared = MotionManager()
+    
+    private init() {
+    }
 
     func startMotionUpdates() {
         if motionManager.isDeviceMotionAvailable {
             motionManager.deviceMotionUpdateInterval = 0.1
-            motionManager.startDeviceMotionUpdates(to: .main) { (motion, error) in
-                guard let motion = motion else { return }
+            motionManager.startDeviceMotionUpdates(to: .main) { [weak self] (motion, error) in
+                guard let motion = motion, let self = self else { return }
                 
-                // Example: Detect device movement based on pitch angle
                 let pitch = motion.attitude.pitch
-                self.pitchSubject.send (pitch)  // Adjust the threshold as needed
+                self.pitchSubject.send (pitch)
             }
         }
     }
@@ -33,6 +37,30 @@ class MotionManager {
         motionManager.stopDeviceMotionUpdates()
     }
 }
+// MARK: - RocketsProvider
+
+struct MotionProvider {
+    var startMotionUpdates: () -> ()
+    var stopMotionUpdates: () -> ()
+    var pitchSubject: PassthroughSubject<Double, Never>
+}
+
+extension MotionProvider: DependencyKey {
+    
+    static let liveValue = Self(
+        startMotionUpdates: MotionManager.shared.startMotionUpdates,
+        stopMotionUpdates: MotionManager.shared.stopMotionUpdates,
+        pitchSubject: MotionManager.shared.pitchSubject
+    )
+}
+
+
+extension DependencyValues {
+  var motionProvider: MotionProvider {
+    get { self[MotionProvider.self] }
+    set { self[MotionProvider.self] = newValue }
+  }
+}
 
 
 // MARK: Reducer
@@ -40,7 +68,7 @@ class MotionManager {
 @Reducer
 struct RocketLaunch {
   
-    let motion = MotionManager()
+    @Dependency(\.motionProvider) var motionProvider
     
     @ObservableState
     struct State: Equatable {
@@ -67,16 +95,16 @@ struct RocketLaunch {
                   return .none
                 
                 case .startMotionUpdates:
-                self.motion.startMotionUpdates()
+                self.motionProvider.startMotionUpdates()
                     return .publisher {
-                        motion.pitchSubject
+                        motionProvider.pitchSubject
                             .map { value in
                                 return value < 0.2 ? .land : .launch
                             }
                       }
                 
                 case .stopMotionUpdates:
-                self.motion.stopMotionUpdates()
+                self.motionProvider.stopMotionUpdates()
                 return .none
             }
         }
